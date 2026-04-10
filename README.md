@@ -1,13 +1,13 @@
 <h3>Identitas<h3>
-<h5>Nama : Iyan Ihsanu yafi NIM : 24.12.3361<h5>
+<h5>Nama : Iyan Ihsanu yafi NIM : 24.12.3361<h5><br>
 <h3>Link Laravel Cloud<h3>
-<h5>https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<h5>
+<h5>https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<h5><br>
 <h3>Tugas 1<h3>
-<h5>1. Home : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/</h5>
-<h5>2. Profil :  https://eventamikom-3361-main-lokxpk.free.laravel.cloud/profil</h5>
-<h5>3. Katalog : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/katalog</h5>
-<h5>4. Bantuan : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/bantuan</h5>
-<h5>5. Kontak : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/kontak</h5>
+<h5>1. Home : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/</h5><br>
+<h5>2. Profil :  https://eventamikom-3361-main-lokxpk.free.laravel.cloud/profil</h5><br>
+<h5>3. Katalog : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/katalog</h5><br>
+<h5>4. Bantuan : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/bantuan</h5><br>
+<h5>5. Kontak : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/kontak</h5><br>
   
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
