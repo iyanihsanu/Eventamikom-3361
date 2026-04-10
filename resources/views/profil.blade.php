@@ -30,7 +30,7 @@
             <div class="relative bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 p-10 rounded-[2rem] text-center transform transition duration-500 hover:-translate-y-2">
                 <div class="mx-auto w-32 h-32 rounded-full p-1 bg-gradient-to-br from-indigo-400 to-purple-500 mb-6">
                     <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center text-4xl font-light text-white">
-                        P
+                        I
                     </div>
                 </div>
                 
