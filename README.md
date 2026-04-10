@@ -2,7 +2,7 @@
 <h5>Nama : Iyan Ihsanu yafi NIM : 24.12.3361<h5>
 <h3>Link Laravel Cloud<h3>
 <h5>https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<h5>
-<h5>Tugas 1<h5>
+<h3>Tugas 1<h3>
 <h5>1. Home : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/</h5>
 <h5>2. Profil :  https://eventamikom-3361-main-lokxpk.free.laravel.cloud/profil</h5>
 <h5>3. Katalog : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/katalog</h5>
