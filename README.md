@@ -1,6 +1,6 @@
 <h3>Identitas</h3>
 Nama : Iyan Ihsanu yafi<br>
-NIM : 24.12.3361<br>
+NIM  : 24.12.3361<br>
 <h3>Link Laravel Cloud</h3>
 https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<br>
 <h3>Tugas 1</h3>
