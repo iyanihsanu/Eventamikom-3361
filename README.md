@@ -10,9 +10,9 @@ https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<br>
 4. Bantuan : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/bantuan<br>
 5. Kontak  : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/kontak<br>
 <h3>Tugas 2</h3>
-1.Halaman Dashboard :
-2.Halaman Event : 
-3.Halaman Transaksi : 
+1.Halaman Dashboard : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/admin<br>
+2.Halaman Event : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/admin/events<br>
+3.Halaman Transaksi : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/admin/transactions<br>
 4.Halaman Beranda : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<br>
 5.Halaman Detail Event : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/event-detail.html<br>
 6.Halaman Checkout : https://eventamikom-3361-main-lokxpk.free.laravel.cloud/checkout.html<br>
