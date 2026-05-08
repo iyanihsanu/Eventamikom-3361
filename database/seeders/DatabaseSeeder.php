@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Akun Admin Utama
         User::create([
             'name' => 'Admin Amikom',
             'email' => 'admin@amikom.ac.id',
@@ -25,14 +24,11 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        // 2. Insert 3 Kategori (Memenuhi syarat minimal 3)
         $cat1 = Category::create(['name' => 'Seminar IT', 'slug' => 'seminar-it']);
         $cat2 = Category::create(['name' => 'Entertainment', 'slug' => 'entertainment']);
         $cat3 = Category::create(['name' => 'Business & Startup', 'slug' => 'business-startup']);
-
-        // 3. Insert 6 Sampel Events (Memenuhi syarat minimal 6)
         
-        // Data dari kode Anda
+      
         Event::create([
             'category_id' => $cat2->id,
             'title' => 'Jazz Night 2025',
@@ -66,7 +62,7 @@ class DatabaseSeeder extends Seeder
             'poster_path' => 'posters/event-3.png',
         ]);
 
-        // Tambahan event untuk memenuhi syarat 6
+        
         Event::create([
             'category_id' => $cat3->id,
             'title' => 'Startup Pitching Day',
