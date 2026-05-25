@@ -3,27 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Partner;
+use App\Models\Event;
 
 class HomeController extends Controller
 {
+    //
     public function index()
     {
-        return view('welcome');
-    }
+        $events = Event::latest()->get();
 
-    
-    public function jelajahi()
-    {
-        return view('jelajahi');
-    }
+        $partners = Partner::latest()->get();
 
-    public function kategori()
-    {
-        return view('kategori');
-    }
-
-    public function tentang()
-    {
-        return view('tentang');
+        return view('welcome', compact('events', 'partners'));
     }
 }

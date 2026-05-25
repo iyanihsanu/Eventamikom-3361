@@ -1,38 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Admin Dashboard' }} - AmikomEventHub</title>
+    <title>{{ $title ?? 'Admin Dashboard' }} — AmikomEventHub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Syne', sans-serif; }
+        .sidebar-link { transition: all 0.2s ease; }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(255,255,255,0.12);
+            padding-left: 1.25rem;
         }
+        .sidebar-link.active { border-left: 3px solid #a78bfa; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
+<body class="bg-slate-100 text-slate-900 flex min-h-screen">
 
-<body class="bg-slate-50 text-slate-900 flex min-h-screen">
-    <aside class="w-64 bg-indigo-900 text-indigo-100 flex flex-col p-6 space-y-8 sticky top-0 h-screen">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-900 font-bold text-xl">AH</div>
-            <span class="text-xl font-bold text-white tracking-tight">AmikomEventHub</span>
+    {{-- SIDEBAR --}}
+    <aside class="w-64 flex-shrink-0 sticky top-0 h-screen flex flex-col"
+        style="background: linear-gradient(160deg, #1e1b4b 0%, #312e81 60%, #4c1d95 100%);">
+
+        {{-- Logo --}}
+        <div class="px-6 py-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-indigo-900"
+                    style="background: linear-gradient(135deg, #a78bfa, #f9a8d4);">
+                    AH
+                </div>
+                <div>
+                    <p class="font-bold text-white text-sm leading-tight">AmikomEventHub</p>
+                    <p class="text-[10px] text-indigo-300">Admin Panel</p>
+                </div>
+            </div>
         </div>
-        <nav class="flex-1 space-y-2">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-4 px-2">Main Menu</p>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-indigo-800 rounded-xl font-bold transition">Dashboard</a>
-            <a href="{{ route('admin.events.index') }}" class="flex items-center gap-3 px-4 py-3 {{ request()->routeIs('events.*') ? 'bg-indigo-800 text-white' : '' }} rounded-xl font-bold transition">
-                Kelola Event
+
+        {{-- Nav --}}
+        <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-indigo-400 px-3 mb-3">Menu Utama</p>
+
+            <a href="{{ route('admin.dashboard') }}"
+               class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span class="text-sm font-medium">Dashboard</span>
+            </a>
+
+            <a href="{{ route('admin.events.index') }}"
+               class="sidebar-link {{ request()->routeIs('admin.events.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-sm font-medium">Kelola Event</span>
+            </a>
+
+            <a href="{{ route('admin.categories.index') }}"
+               class="sidebar-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                <span class="text-sm font-medium">Kelola Kategori</span>
+            </a>
+
+            <a href="{{ route('admin.partners.index') }}"
+               class="sidebar-link {{ request()->routeIs('admin.partners.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-sm font-medium">Kelola Partner</span>
             </a>
         </nav>
+
+        {{-- Footer sidebar --}}
+        <div class="px-4 py-4 border-t border-white/10">
+            <div class="flex items-center gap-3 px-3 py-2">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=7c3aed&color=fff&size=64"
+                    class="w-8 h-8 rounded-lg">
+                <div>
+                    <p class="text-white text-xs font-semibold leading-tight">Admin Super</p>
+                    <p class="text-indigo-400 text-[10px]">Penyelenggara Utama</p>
+                </div>
+            </div>
+        </div>
     </aside>
 
+    {{-- MAIN CONTENT --}}
+    <main class="flex-1 overflow-y-auto">
+        {{-- Top bar --}}
+        <div class="sticky top-0 z-10 bg-slate-100/80 backdrop-blur-sm border-b border-slate-200 px-8 py-4 flex justify-between items-center">
+            <p class="text-sm text-slate-500">
+                <span class="font-semibold text-slate-800">{{ $title ?? 'Dashboard' }}</span>
+                <span class="mx-2 text-slate-300">•</span>
+                {{ now()->translatedFormat('l, d F Y') }}
+            </p>
+            <a href="/" class="text-xs text-indigo-600 font-semibold hover:underline flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                Lihat Website
+            </a>
+        </div>
 
-    <main class="flex-1 p-10 overflow-y-auto">
-        @yield('content')
+        <div class="p-8">
+            @yield('content')
+        </div>
     </main>
 </body>
-
 </html>
