@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'DM Sans', sans-serif; }
-        h1, h2, h3, .font-display { font-family: 'Syne', sans-serif; }
-        .sidebar-link { transition: all 0.2s ease; }
-        .sidebar-link:hover, .sidebar-link.active {
-            background: rgba(255,255,255,0.12);
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .sidebar-link {
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: rgba(255, 255, 255, 0.12);
             padding-left: 1.25rem;
         }
-        .sidebar-link.active { border-left: 3px solid #a78bfa; }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        .sidebar-link.active {
+            border-left: 3px solid #a78bfa;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body class="bg-slate-100 text-slate-900 flex min-h-screen">
 
     {{-- SIDEBAR --}}
@@ -45,41 +73,61 @@
             <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-indigo-400 px-3 mb-3">Menu Utama</p>
 
             <a href="{{ route('admin.dashboard') }}"
-               class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="text-sm font-medium">Dashboard</span>
             </a>
 
             <a href="{{ route('admin.events.index') }}"
-               class="sidebar-link {{ request()->routeIs('admin.events.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                class="sidebar-link {{ request()->routeIs('admin.events.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <span class="text-sm font-medium">Kelola Event</span>
             </a>
 
             <a href="{{ route('admin.categories.index') }}"
-               class="sidebar-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                class="sidebar-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
                 <span class="text-sm font-medium">Kelola Kategori</span>
             </a>
 
             <a href="{{ route('admin.partners.index') }}"
-               class="sidebar-link {{ request()->routeIs('admin.partners.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
+                class="sidebar-link {{ request()->routeIs('admin.partners.*') ? 'active' : '' }} flex items-center gap-3 px-3 py-2.5 rounded-xl text-indigo-100 hover:text-white">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span class="text-sm font-medium">Kelola Partner</span>
             </a>
         </nav>
+        <div class="pt-6 border-t border-indigo-800">
+            <form action="{{ route('admin.logout') }}" method="POST">
+                @csrf
+                <button type="submit"
+                    class="w-full flex items-center gap-3 px-4 py-3 text-indigo-300
+hover:text-white transition font-medium text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0
+0 24 24">
+
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-
+                            width="2"
+
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0
+01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                        </path>
+                    </svg>
+                    Keluar
+                </button>
+            </form>
+        </div>
 
         {{-- Footer sidebar --}}
         <div class="px-4 py-4 border-t border-white/10">
@@ -105,7 +153,7 @@
             </p>
             <a href="/" class="text-xs text-indigo-600 font-semibold hover:underline flex items-center gap-1">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
                 Lihat Website
             </a>
@@ -116,4 +164,5 @@
         </div>
     </main>
 </body>
+
 </html>
