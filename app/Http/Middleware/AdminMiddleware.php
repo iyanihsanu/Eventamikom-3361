@@ -1,21 +1,24 @@
 <?php
+
 namespace App\Http\Middleware;
 
-use Illuminate\Foundation\Application;
-use Illuminate\Foundation\Configuration\Exceptions;
-use Illuminate\Foundation\Configuration\Middleware;
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth; // 1. Tambahkan baris ini agar VS Code mengenali Auth
 
-return Application::configure(basePath: dirname(__DIR__))
-    ->withRouting(
-        web: __DIR__ . '/../routes/web.php',
-        commands: __DIR__ . '/../routes/console.php',
-        health: '/up',
-    )
-    ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias([
-            'admin' => \App\Http\Middleware\AdminMiddleware::class, //Sesuaikan dengan nama class middleware admin Anda
-        ]);
-    })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+class AdminMiddleware
+{
+    /**
+     * Handle an incoming request.
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        // 2. Ubah auth() menjadi Auth:: agar VS Code tidak memunculkan garis merah
+        if (Auth::check() && Auth::user()->is_admin) { 
+            return $next($request);
+        }
+
+        return redirect('/')->with('error', 'Anda tidak memiliki akses ke halaman admin.');
+    }
+}
