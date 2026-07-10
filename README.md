@@ -20,6 +20,8 @@ https://eventamikom-3361-main-lokxpk.free.laravel.cloud/<br>
 Menambahkan database migration/seeding<br>
 <h3>Tugas 4</h3>
 CRUD Tabel Events<br>
+<h3>Tugas 13</h3>
+https://github.com/iyanihsanu/newamikomeventhub3361<br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
